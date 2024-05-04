@@ -1,34 +1,13 @@
-/*********************************************************************
-                                                   
-88        88   ,ad8888ba,  88b           d88 88        88  ad88888ba   
-88        88  d8"'    `"8b 888b         d888 88        88 d8"     "8b  
-88        88 d8'           88`8b       d8'88 88        88 Y8,          
-88aaaaaaaa88 88            88 `8b     d8' 88 88        88 `Y8aaaaa,    
-88""""""""88 88            88  `8b   d8'  88 88        88   `"""""8b,  
-88        88 Y8,           88   `8b d8'   88 88        88         `8b  
-88        88  Y8a.    .a8P 88    `888'    88 Y8a.    .a8P Y8a     a8P  
-88        88   `"Y8888Y"'  88     `8'     88  `"Y8888Y"'   "Y88888P"   
-
-                                   est.1941 @ PHYSICS AND ENGINEERING
-
-COPYRIGHT 2024 @ DEVELOPED BY [GROUP 1] 
-
-Github repo + pull request (GROUP 1): github.com/Phong12HexDockwork/KTLTC_BTL
-VNU @ University of Science   
-227 Nguyen Van Cu Street, District 5, Ho Chi Minh City
-                                                 
-**********************************************************************/
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////
 #include        <bits/stdc++.h>
 #define         size_equation                        100
 #define         array_size                           50
-///////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////
+#define         MAX_LENGTH_CHAR                      256
+
 const char      *calculation              =         "+ ";
 
 char            first_equation                      [size_equation], 
-                second_equation                     [size_equation]; 
+                second_equation                     [size_equation], 
+                hostname                            [MAX_LENGTH_CHAR];
 
 
 int             addition_saving_number              [array_size], 
@@ -47,14 +26,16 @@ int             addition_saving_number              [array_size],
 
 
                
-bool            condition_global          =         false; 
+bool            condition_global          =         false,
+                stopLoading               =         false,
+                thread_check              =         false;
+
 using           namespace                           std;
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////
 void    split_coefficient_exponent          (const string& equation, 
                                              int& base, 
                                              int& exponent);
-///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void    solution_equation                   (char equation[]) {
 
         int         index = 0, 
@@ -83,7 +64,7 @@ void    solution_equation                   (char equation[]) {
 
         return ;
 }
-///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 int     *multiplyTwoPolynomials(int poly1[], int poly2[], int size_poly1, int size_poly2) {
 
         int *productPolynomial = new int [size_poly1 + size_poly2 - 1];
@@ -96,7 +77,7 @@ int     *multiplyTwoPolynomials(int poly1[], int poly2[], int size_poly1, int si
         return productPolynomial;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 class Polynomial
 {
 public:
@@ -174,7 +155,7 @@ public:
 
 
                 remainder = remainder - (multiplier * other);
-                quotient = quotient + multiplier;
+                quotient  = quotient + multiplier;
                 }
 
                 return std::make_pair(quotient, remainder);
@@ -199,7 +180,6 @@ std::ostream& operator<<(std::ostream& os, const Polynomial& p)
         return (os << p.m_coeffs[p.m_deg-1] << "x + " << p.m_coeffs[p.m_deg]);
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////
 void    split_coefficient_exponent          (const string& equation, 
                                              int& base, 
                                              int& exponent) {
@@ -229,22 +209,22 @@ void    split_coefficient_exponent          (const string& equation,
 
         return;
 }
-///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void    deploy_submit_number               () {
         
         for( int index  =  0 ; index  <=  array_size ;  index++ )     {
                 subtraction_saving_number_result   [index]      =    subtraction_saving_number             [index] 
-                                                                   - subtraction_saving_number_part2       [index];
-                //cout << index <<" "<<subtraction_saving_number[index] << endl;
-        }
+                                                                   - subtraction_saving_number_part2       [index];        }
         return;
 }
-///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void    output_number                           (int saving_number[50]){
 
-        bool ping_check  =  true ;
-        for ( int index  =  array_size ; index  >=  0 ;  index-- )    { 
-
+        bool ping_check     =  true ;
+        
+        for ( int index  =  array_size ; index  >=  0 ;  index-- ){ if ( saving_number [index] == 0 ) { thread_check = true; }else{thread_check = false; break;}}
+        for ( int index  =  array_size ; index  >=  0 ;  index-- ){ 
+                if ( saving_number [index] != 0 ) {!thread_check;}
                 switch (index) {
                         case 0: if ( saving_number [index]  !=  0 ){ 
 
@@ -256,7 +236,7 @@ void    output_number                           (int saving_number[50]){
 
                                 ping_check  =       false; 
                                 cout        <<      abs(saving_number[index])    
-                                            <<      "x" ; } 
+                                            <<      "x" ; }  
                                 break;
 
                         default:if ( saving_number  [index]   != 0 ){
@@ -271,11 +251,11 @@ void    output_number                           (int saving_number[50]){
             if ( saving_number [index-1]  > 0 && ping_check == false ) { cout << "+" ;   } else 
             if ( saving_number [index-1]  < 0                        ) { cout << "-" ;   }   
         }
-
+        if ( thread_check == true ){ cout << "0";}
         cout << endl;
         return;
 }
-///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 char    *process_string                     (char equation[]) {
 
         int size_string  =  strlen (equation);
@@ -290,7 +270,7 @@ char    *process_string                     (char equation[]) {
         }
         return equation; 
 }
-///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 char   *add_one                            (char equation[]) {
         int  size_add_one  =  strlen(equation);
         for ( int index    =  size_add_one + 1 ; index > 0; index-- ) { equation [index]  =  equation [index-1]; }
@@ -309,11 +289,10 @@ char   *add_one                            (char equation[]) {
         }
         return equation;
 }
-///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 char    *identify_parentheses               (char equation[]){
 
         string str_equation(equation);
-        //cout << str_equation;
         int    jump   =  0,
                saving_point                [size_equation];
 
@@ -351,27 +330,19 @@ char    *identify_parentheses               (char equation[]){
         
         if ( str_equation[1] == '(' ) {str_equation.insert(1,"+") ;}
 
-
-
         for ( int index  =  0 ; index < jump ; index++ ){
 
                 string delete_equation =  "(" + temp_equation[index] + ")" ;
                 
 
-                if ( saving_point [index]  ==   1 ){delete_equation  = "+" + delete_equation ;}
-                if ( saving_point [index]  ==  -1 ){delete_equation  = "-" + delete_equation ;}
-                if (expanded_equation [index] != "1"){delete_equation += expanded_equation[index];}
-                if (str_equation[0] == '(' ){}
+                if ( saving_point [index]  ==   1 )     {delete_equation  =  "+" + delete_equation ;}
+                if ( saving_point [index]  ==  -1 )     {delete_equation  =  "-" + delete_equation ;}
+                if ( expanded_equation [index] != "1")  {delete_equation  += expanded_equation[index];}
+                if ( str_equation[0]       ==  '('  ){}
                 size_t pos  =  str_equation.find(delete_equation);
 
-                while (pos != string::npos) {
-
-                        str_equation.erase (pos, delete_equation.length());
-                        pos  =  str_equation.find (delete_equation, pos);
-                }
-
+                while (pos != string::npos) { str_equation.erase (pos, delete_equation.length()) ; pos  =  str_equation.find (delete_equation, pos);}
         }
-
 
         int     base_equation [size_equation],
                 expo_equation [size_equation];
@@ -455,18 +426,51 @@ char    *identify_parentheses               (char equation[]){
 
         return return_equation;
 }
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-int     main                               () {
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+void    reverseVector                       ( vector <double> & vec ) {reverse(vec.begin(), vec.end());}
 
+void    loadingAnimation                    () {
+        const int numOfFrames = 5;
+        const char frames[numOfFrames] = {'|', '/', '-', '\\'};
+        int frameIndex = 0;
+
+        cout << endl;
+
+        while (!stopLoading) {
+                cout  <<  "\r( Computer @ "
+                      <<  hostname
+                      <<  " ) Dang tinh toan " << frames[frameIndex] << flush;
+
+                this_thread::sleep_for(chrono::milliseconds(100)); frameIndex = (frameIndex + 1) % numOfFrames;
+        }
+}
+
+void    checking_system         (){
+        #if __linux__
+                system("clear");
+
+        #elif __WIN32
+                system("cls"); 
+
+        #elif __APPLE__
+                system("clear");
+
+        #endif
+}
+
+int     main                               () {
+        
+        gethostname(hostname, sizeof(hostname));
+        checking_system();
+        cout <<   "=========================Chuong trinh tinh toan 2 da thuc========================="
+             <<   endl;
         cout << "+ Nhap Vao da thuc dau tien:  ";
         cin.getline                   (first_equation,    size_equation);
 
         cout <<   endl
              <<   "+ Nhap Vao da thuc thu hai :  ";
         cin.getline                   (second_equation,   size_equation);
-        //cout << first_equation << endl << second_equation;
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
         char *temp_equation_one = first_equation,
              *temp_equation_two = second_equation;
 
@@ -500,30 +504,24 @@ int     main                               () {
         strcpy(first_equation, temp_equation_one);
         strcpy(second_equation, temp_equation_two);
 
-        //cout << first_equation << endl << second_equation;
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
         
         solution_equation             (first_equation) ; 
         condition_global              =                  true; 
         solution_equation             (second_equation) ;
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
         deploy_submit_number          ();
 
-        /**cout << "Dang thuc hien tinh toan" << endl;
-        for (int i = 0; i < 10; ++i) {
-                std::cout << "[";
-                for (int j = 0 ; j < i; ++j) std::cout << '.';
-                for (int j = 0 ; j < 10 - i; ++j) cout << ' ';
-                cout << "]\r";
-                cout.flush();
-                sleep(1); 
-        }**/
-        //for ( int i = 0; i <= highest_exponemnt_poly1 ; i++) {cout << i <<" "<<saving_base_exponent_poly1 [i] << endl;}
-        //cout << highest_exponemnt_poly1 << " " << highest_exponemnt_poly2;
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
+        thread loadingThread(loadingAnimation);
+        this_thread::sleep_for(chrono::seconds(2));
+        stopLoading = true;loadingThread.join();
+        cout <<  "\r( Computer @ "
+             <<  hostname
+             <<  " ) Tinh toan hoan tat!          " << endl
+             <<  "==================================================================================";
+        
+       cout  <<   endl 
+             <<   "+ Phep nhan va chia:";
+
         int size_poly1 = sizeof (saving_base_exponent_poly1) / sizeof (saving_base_exponent_poly1[0]);
         int size_poly2 = sizeof (saving_base_exponent_poly2) / sizeof (saving_base_exponent_poly2[0]);
 
@@ -532,23 +530,26 @@ int     main                               () {
 
 	cout <<   endl
              <<   endl
-             <<   "     - Nhan 2 da thuc:  "; 
+             <<   "     - Nhan 2 da thuc:     "; 
         output_number (prod);
+        if (thread_check == true) {cout << "0";}
 
         
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////,,//////////////////////
         vector<double> coeffs_p1 (saving_base_exponent_poly1, 
-                                  saving_base_exponent_poly1 + size_poly1);
-
+                                  saving_base_exponent_poly1 + ++highest_exponemnt_poly1 );
         vector<double> coeffs_p2 (saving_base_exponent_poly2, 
-                                  saving_base_exponent_poly2 + size_poly2);
+                                  saving_base_exponent_poly2 + ++highest_exponemnt_poly2 );
+
+        reverse(coeffs_p1.begin(), coeffs_p1.end());
+        reverse(coeffs_p2.begin(), coeffs_p2.end());
 
         Polynomial p1 (coeffs_p1);
         Polynomial p2 (coeffs_p2);
 
-        auto div = p1 / p2;
-        auto quotient = div.first;
-        auto remainder = div.second;
+        auto div        = p1 / p2;
+        auto quotient   = div.first;
+        auto remainder  = div.second;
 
         cout  <<   endl 
               <<   "     - Chia 2 da thuc:     " 
@@ -565,11 +566,13 @@ int     main                               () {
               <<   endl ;
 
         cout  <<   endl 
-              <<   "     - Cong 2 da thuc la:  " ; output_number (addition_saving_number); 
+              <<   "     - Cong 2 da thuc la:  ";  output_number (addition_saving_number);
 
         cout  <<   endl 
               <<   "     - Tru 2 da thuc la :  " ; output_number (subtraction_saving_number_result);
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
+        cout  <<   "======================================HET=========================================";
         return 0;
 } 
 
