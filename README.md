@@ -1,6 +1,7 @@
 
 
 # Polynomial Arithmetic
+
 [Phạm Thanh Phong](https://www.facebook.com/profile.php?id=100058046165384) 
 [Nguyễn Ngô Thùy Trinh](https://www.facebook.com/profile.php?id=100086016403901)
 [Vũ Thiên Vinh](https://www.facebook.com/vinhvuuuuu)
