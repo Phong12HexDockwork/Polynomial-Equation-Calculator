@@ -9,8 +9,9 @@ This C++ program performs arithmetic operations on polynomials, including additi
 - **Loading Animation**: Displays a loading animation during calculations.
 - **Platform Compatibility**: Clears the console based on the operating system for a better user experience.
 
-# Explain 
-## Polynomial Class Explanation
+# Explanation 
+
+## Polynomial Division Class Explanation
 
 The `Polynomial` class in C++ represents a polynomial expression and provides functionalities for creating, manipulating, and performing arithmetic operations on polynomial objects.
 
