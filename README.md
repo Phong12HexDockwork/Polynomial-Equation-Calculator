@@ -116,3 +116,35 @@ This class facilitates polynomial manipulation and computation in a clear and co
   - The function returns a pointer to the `productPolynomial` array, which contains the coefficients of the product polynomial resulting from the multiplication of the two input polynomials.
 
 This function efficiently calculates the product of two polynomials by performing the necessary multiplications and additions to obtain the coefficients of the resulting polynomial.
+
+### `output_number` Function
+
+The `output_number` function is responsible for printing a polynomial in a readable format. Let's analyze the function:
+
+- **Input**:
+  - `int saving_number[50]`: An array containing the coefficients of the polynomial.
+
+- **Variables**:
+  - `ping_check`: A boolean variable used to track whether any non-zero coefficients have been encountered.
+  - `thread_check`: A boolean variable used to check if all coefficients are zero.
+
+- **Functionality**:
+  - The function iterates through the coefficients of the polynomial from the highest degree to the constant term.
+  - It first checks if all coefficients are zero. If so, it prints "0" and exits.
+  - Within the loop, it determines the appropriate representation for each coefficient based on its degree:
+    - For the constant term (degree 0), it prints the absolute value of the coefficient.
+    - For linear terms (degree 1), it prints the coefficient followed by "x".
+    - For higher-degree terms, it prints the coefficient followed by "x^" and the degree.
+  - If the coefficient of the next term is positive and `ping_check` is false (indicating that previous non-zero coefficients have been encountered), it prints "+" before the next term. If the coefficient is negative, it prints "-".
+  - Finally, it checks if all coefficients are zero. If so, it prints "0" to ensure a valid polynomial representation.
+  - It ends the output with a newline character.
+
+- **Output**:
+  - The function prints the polynomial representation based on the coefficients provided.
+
+- **Explanation**:
+  - This function ensures that the polynomial is displayed in a standard mathematical notation, making it easier for users to interpret.
+  - It handles cases where certain terms may have zero coefficients, ensuring that the output is concise and accurate.
+  - By printing terms in descending order of degree and handling sign placement appropriately, it provides a clear and readable representation of the polynomial.
+
+Overall, this function plays a crucial role in visualizing polynomials, aiding users in understanding and working with polynomial expressions effectively.
