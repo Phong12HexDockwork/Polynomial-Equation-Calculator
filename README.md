@@ -1,3 +1,4 @@
+
 # Polynomial Arithmetic in C++
 [Phạm Thanh Phong](https://www.facebook.com/profile.php?id=100058046165384) @ University of Science - Vietnam National University
 
@@ -75,6 +76,8 @@ The `multiplyTwoPolynomials` function calculates the product of two polynomial a
 
 - **Variables**:
   - `productPolynomial`: A dynamically allocated integer array to store the coefficients of the resulting polynomial.
+  - 
+![image_2022_01_11T10_16_58_901Z-1024x463](https://github.com/Phong12HexDockwork/Polynomial-Equation-Calculator/assets/99865968/53d97474-0fe8-4c92-a7b5-5292c8f189d3)
 
 - **Process**:
   1. The function dynamically allocates memory for the `productPolynomial` array, which will store the coefficients of the resulting polynomial. The size of this array is the sum of the sizes of the input polynomial arrays minus one, which is the maximum possible degree of the product polynomial.
