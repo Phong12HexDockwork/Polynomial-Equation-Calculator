@@ -20,23 +20,6 @@ This C++ program performs arithmetic operations on polynomials, including additi
 
 # ⚙ Explanation 
 
-### `process_string(char equation[])`:
-- This function processes the input equation string to ensure correct handling of negative terms.
-- It iterates through the string and checks for minus signs (`-`).
-- If a minus sign is found, it checks if there's a space before it. If not, it inserts a space before the minus sign.
-- Additionally, if there's a space after the minus sign, it removes that space.
-- Finally, it returns the processed equation string.
-- 
-![3](https://github.com/Phong12HexDockwork/Polynomial-Equation-Calculator/assets/99865968/7ebdf319-e6cf-424a-bd73-34adcfd0019c)
-
-### `add_one(char equation[])`:
-- This function adds a coefficient of 1 for terms where the coefficient is implicit.
-- It iterates through the equation string and looks for specific characters (`)`, `(`, `+`, `-`, `*`, ` `) followed by `x`.
-- When it finds such a pattern, it inserts a coefficient of 1 before the `x` term.
-- This ensures that all terms have an explicit coefficient.
-- It returns the modified equation string.
-
-Both of these functions seem to prepare the equation strings for further processing or calculation.
 ### `solution_equation` Function
 
 The `solution_equation` function parses a character array representing an equation, splitting it into individual components such as coefficients and exponents. Here's a breakdown of its functionality:
@@ -61,6 +44,25 @@ The `solution_equation` function parses a character array representing an equati
 
 - **Output**: 
   - The function does not return any value; instead, it populates global arrays with the coefficients and exponents of the equation.
+
+### `process_string(char equation[])`:
+- This function processes the input equation string to ensure correct handling of negative terms.
+- It iterates through the string and checks for minus signs (`-`).
+- If a minus sign is found, it checks if there's a space before it. If not, it inserts a space before the minus sign.
+- Additionally, if there's a space after the minus sign, it removes that space.
+- Finally, it returns the processed equation string.
+  
+![3](https://github.com/Phong12HexDockwork/Polynomial-Equation-Calculator/assets/99865968/7ebdf319-e6cf-424a-bd73-34adcfd0019c)
+
+### `add_one(char equation[])`:
+- This function adds a coefficient of 1 for terms where the coefficient is implicit.
+- It iterates through the equation string and looks for specific characters (`)`, `(`, `+`, `-`, `*`, ` `) followed by `x`.
+- When it finds such a pattern, it inserts a coefficient of 1 before the `x` term.
+- This ensures that all terms have an explicit coefficient.
+- It returns the modified equation string.
+
+Both of these functions seem to prepare the equation strings for further processing or calculation.
+
 
 ### `split_coefficient_exponent` Function
 
