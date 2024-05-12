@@ -32,7 +32,6 @@ This C++ program performs arithmetic operations on polynomials, including additi
    + Enter the first polynomial equation: 2x^3 + 3x^2 - x + 5
    + Enter the second polynomial equation: -x^2 + 4x - 1
    
-   ( Computer @ hostname ) Calculating... \     # Loading animation
    ( Computer @ hostname ) Calculation complete!         
    
    ================================================================================
