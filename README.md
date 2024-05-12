@@ -11,37 +11,47 @@ This C++ program performs arithmetic operations on polynomials, including additi
 
 # Explanation 
 
-# Polynomial Equation Processing Code Explanation
+### `solution_equation` Function
 
-The provided code contains functions for processing, optimizing, and performing operations on polynomial equations. Let's break down each function:
+The `solution_equation` function parses a character array representing an equation, splitting it into individual components such as coefficients and exponents. Here's a breakdown of its functionality:
 
-## `process_string`
+- **Inputs**: 
+  - `equation`: A character array representing the equation to be processed.
 
-This function processes a string representing a polynomial equation. It mainly handles removing unnecessary spaces and ensuring proper formatting around negative signs.
+- **Variables**:
+  - `index`: An integer variable used as an index for storing components.
+  - `base`, `exponent`: Integer variables to store the base and exponent of each term.
+  - `str_number_equation`: An array of strings to store the components of the equation.
+  - `pointer`, `number_equation`: Pointers used for parsing the equation.
 
-## `add_one`
+- **Process**:
+  1. The function initializes `index` to 0 and sets up variables for storing the base and exponent of each term.
+  2. It defines an array `str_number_equation` to store the individual components of the equation.
+  3. Using `strtok`, the function parses the input equation and stores each component in `str_number_equation`.
+  4. It then iterates over the stored components and calls the `split_coefficient_exponent` function for each component.
+  5. The loop continues until all components are processed.
 
-This function adds a coefficient of 1 to variables in the polynomial equation that don't have a coefficient specified. It also ensures proper spacing and formatting.
+- **Output**: 
+  - The function does not return any value; instead, it populates global arrays with the coefficients and exponents of the equation.
 
-## `identify_parentheses`
+### `split_coefficient_exponent` Function
 
-This function identifies and optimizes parentheses in the equation. It extracts equations within parentheses, expands them if needed, and removes the parentheses. Additionally, it performs operations on the extracted equations and integrates them back into the main equation.
+The `split_coefficient_exponent` function extracts the coefficient and exponent from a given term in the equation. Here's an explanation of its functionality:
 
-## `solution_equation`
+- **Inputs**: 
+  - `equation`: A string representing a term in the equation.
+  - `base`, `exponent`: References to integer variables to store the extracted coefficient and exponent.
 
-This function splits the equation into individual components, such as coefficients and exponents, and stores them for further processing.
+- **Variables**:
+  - `x_pos`, `pow_pos`: Size_t variables storing the positions of 'x' and '^' characters in the term.
 
-## `split_coefficient_exponent`
+- **Process**:
+  1. The function searches for the positions of 'x' and '^' characters in the term using the `find` method of the string class.
+  2. Based on the positions found, it extracts the coefficient and exponent from the term.
+  3. If 'x' or '^' characters are not found, default values are assigned to `base` and `exponent`.
+  4. The extracted coefficient and exponent are then used to update global arrays storing polynomial information.
 
-This function splits a coefficient and an exponent from a given equation string and saves them for later use.
+- **Output**: 
+  - The function updates global arrays with the extracted coefficient and exponent information.
 
-## `multiplyTwoPolynomials`
-
-This function multiplies two polynomial equations represented as arrays of coefficients and returns the resulting polynomial.
-
-## `Polynomial` class
-
-This class represents a polynomial equation and provides methods for addition, subtraction, multiplication, division, and truncation. It also overloads the output stream operator for printing polynomial objects.
-
-Overall, these functions and the `Polynomial` class offer a comprehensive toolkit for processing, optimizing, and performing operations on polynomial equations.
-
+This pair of functions work together to break down the equation into its constituent parts and extract relevant information, facilitating further processing and manipulation of the polynomial equation.
