@@ -64,6 +64,8 @@ The `split_coefficient_exponent` function extracts the coefficient and exponent 
 
 - **Output**: 
   - The function updates global arrays with the extracted coefficient and exponent information.
+  
+![2](https://github.com/Phong12HexDockwork/Polynomial-Equation-Calculator/assets/99865968/852572e3-186c-4963-a697-c473f0fbaf56)
 
 This pair of functions work together to break down the equation into its constituent parts and extract relevant information, facilitating further processing and manipulation of the polynomial equation.
 
@@ -73,6 +75,7 @@ The `multiplyTwoPolynomials` function calculates the product of two polynomial a
 
 - **Inputs**:
   - `poly1`: An array representing the coefficients of the first polynomial.
+
   - `poly2`: An array representing the coefficients of the second polynomial.
   - `size_poly1`: The size of the `poly1` array.
   - `size_poly2`: The size of the `poly2` array.
