@@ -55,3 +55,29 @@ The `split_coefficient_exponent` function extracts the coefficient and exponent 
   - The function updates global arrays with the extracted coefficient and exponent information.
 
 This pair of functions work together to break down the equation into its constituent parts and extract relevant information, facilitating further processing and manipulation of the polynomial equation.
+
+### `multiplyTwoPolynomials` Function
+
+The `multiplyTwoPolynomials` function calculates the product of two polynomial arrays representing coefficients of polynomials. Here's a detailed explanation:
+
+- **Inputs**:
+  - `poly1`: An array representing the coefficients of the first polynomial.
+  - `poly2`: An array representing the coefficients of the second polynomial.
+  - `size_poly1`: The size of the `poly1` array.
+  - `size_poly2`: The size of the `poly2` array.
+
+- **Variables**:
+  - `productPolynomial`: A dynamically allocated integer array to store the coefficients of the resulting polynomial.
+
+- **Process**:
+  1. The function dynamically allocates memory for the `productPolynomial` array, which will store the coefficients of the resulting polynomial. The size of this array is the sum of the sizes of the input polynomial arrays minus one, which is the maximum possible degree of the product polynomial.
+  2. It initializes all elements of `productPolynomial` to zero.
+  3. Using nested loops, the function multiplies each term of the first polynomial (`poly1`) with each term of the second polynomial (`poly2`) and adds the result to the corresponding index in `productPolynomial`.
+  4. The outer loop iterates over the indices of `poly1`, and the inner loop iterates over the indices of `poly2`.
+  5. For each pair of coefficients from `poly1` and `poly2`, their product is added to the corresponding index in `productPolynomial`, considering the correct degree.
+  6. Once all multiplication operations are completed, the resulting `productPolynomial` array is returned.
+
+- **Output**:
+  - The function returns a pointer to the `productPolynomial` array, which contains the coefficients of the product polynomial resulting from the multiplication of the two input polynomials.
+
+This function efficiently calculates the product of two polynomials by performing the necessary multiplications and additions to obtain the coefficients of the resulting polynomial.
