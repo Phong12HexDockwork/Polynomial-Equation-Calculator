@@ -14,3 +14,10 @@ This C++ program performs arithmetic operations on polynomials, including additi
 1. Clone the repository:
    ```bash
    git clone https://github.com/your_username/polynomial-arithmetic.git
+   
+2. Compile the source code:
+   ```bash
+   g++ main.cpp -o polynomial
+
+3. Run the executable:
+   ./polynomial
