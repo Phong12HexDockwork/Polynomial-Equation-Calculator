@@ -120,7 +120,8 @@ The `Polynomial` class represents a polynomial and provides various operations o
   - Overloaded operators enable intuitive usage of arithmetic operations on polynomial objects.
   - The `operator<<` function provides a convenient way to output polynomial objects for debugging or display purposes.
 
-![Division-Algorithm-For-Polynomials-1](https://github.com/Phong12HexDockwork/Polynomial-Equation-Calculator/assets/99865968/eed10339-cb9c-4c31-9318-1dde799820d4)
+![Division-Algorithm-For-Polynomials-1](https://github.com/Phong12HexDockwork/Polynomial-Equation-Calculator/assets/99865968/bdcd4520-8093-4366-8eb4-51a2eab9dfc1)
+
 
 This class facilitates polynomial manipulation and computation in a clear and concise manner, making it easier to work with polynomials in various applications.
 
