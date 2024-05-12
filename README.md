@@ -3,16 +3,23 @@
 # Polynomial Arithmetic
 
 [Phạm Thanh Phong](https://www.facebook.com/profile.php?id=100058046165384) 
+<img alt="Static Badge" src="https://img.shields.io/badge/codeforces-gray?style=plastic&logo=codeforces&label=2424&labelColor=%23de0a26&link=https%3A%2F%2Fcodeforces.com%2Fprofile%2Fneraxis"> 
+
 [Nguyễn Ngô Thùy Trinh](https://www.facebook.com/profile.php?id=100086016403901)
+
 [Vũ Thiên Vinh](https://www.facebook.com/vinhvuuuuu)
+
 [Nguyễn Võ Yến Trang](https://www.facebook.com/nguyenvoyentrang15)
+
 [Trần Ngọc Toàn Thắng](https://www.facebook.com/profile.php?id=100047881065625)
+
 [Phan Lê Minh Thuận](https://www.facebook.com/thuanpl280104)
+
 [Lương Tiểu Tuệ](https://www.facebook.com/luongtieutue2017)
+
 [Phan Quốc Việt Anh](https://www.facebook.com/profile.php?id=100058046165384)
 
 
-<img alt="Static Badge" src="https://img.shields.io/badge/codeforces-gray?style=plastic&logo=codeforces&label=2424&labelColor=%23de0a26&link=https%3A%2F%2Fcodeforces.com%2Fprofile%2Fneraxis"> 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 <a href="https://linkedin.com/in/neraxis1210" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="neraxis1210" height="30" width="40" /></a>
