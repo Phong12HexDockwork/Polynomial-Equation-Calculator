@@ -76,6 +76,41 @@ The `multiplyTwoPolynomials` function calculates the product of two polynomial a
   4. The outer loop iterates over the indices of `poly1`, and the inner loop iterates over the indices of `poly2`.
   5. For each pair of coefficients from `poly1` and `poly2`, their product is added to the corresponding index in `productPolynomial`, considering the correct degree.
   6. Once all multiplication operations are completed, the resulting `productPolynomial` array is returned.
+ 
+
+### `Polynomial` Class
+
+The `Polynomial` class represents a polynomial and provides various operations on polynomials, such as addition, subtraction, multiplication, division, and output. Let's break down the class and its methods:
+
+- **Constructor Overloads**:
+  - The class provides multiple constructors:
+    1. `Polynomial(unsigned deg)`: Constructs a polynomial of a specified degree with all coefficients initialized to zero.
+    2. `Polynomial(unsigned deg, initializer_list<double> cs)`: Constructs a polynomial with the specified degree and initializes coefficients using the provided initializer list.
+    3. `Polynomial(initializer_list<double> cs)`: Constructs a polynomial using the provided initializer list, inferring the degree from the list size.
+    4. `Polynomial(const vector<double>& cs)`: Constructs a polynomial using the provided vector of coefficients, inferring the degree from the vector size.
+
+- **Member Functions**:
+  - `degree()`: Returns the degree of the polynomial.
+  - `coefficients()`: Returns a const reference to the vector of coefficients.
+  - `operator+()`: Overloads the addition operator to perform polynomial addition.
+  - `operator-()`: Overloads the subtraction operator to perform polynomial subtraction.
+  - `operator*()`: Overloads the multiplication operator to perform polynomial multiplication.
+  - `truncate()`: Truncates the polynomial by removing leading zero coefficients.
+  - `operator/()`: Overloads the division operator to perform polynomial division, returning a pair of quotient and remainder.
+  
+- **Friend Function**:
+  - `operator<<()`: Overloads the output stream operator to allow printing of polynomial objects. It formats the polynomial as a human-readable string, displaying each term with its coefficient and exponent.
+
+- **Private Members**:
+  - `m_deg`: An unsigned integer representing the degree of the polynomial.
+  - `m_coeffs`: A vector of doubles representing the coefficients of the polynomial.
+
+- **Explanation**:
+  - The class encapsulates the behavior and properties of polynomials, allowing users to perform common operations and manipulate polynomials easily.
+  - Overloaded operators enable intuitive usage of arithmetic operations on polynomial objects.
+  - The `operator<<` function provides a convenient way to output polynomial objects for debugging or display purposes.
+
+This class facilitates polynomial manipulation and computation in a clear and concise manner, making it easier to work with polynomials in various applications.
 
 - **Output**:
   - The function returns a pointer to the `productPolynomial` array, which contains the coefficients of the product polynomial resulting from the multiplication of the two input polynomials.
