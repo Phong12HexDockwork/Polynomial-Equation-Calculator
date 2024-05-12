@@ -1,5 +1,5 @@
 # Polynomial Arithmetic in C++
-[John Doe](https://www.facebook.com/johndoe)
+[Phạm Thanh Phong @ University of Science - Vietnam National University]([https://www.facebook.com/johndoe](https://www.facebook.com/profile.php?id=100058046165384))
 
 This C++ program performs arithmetic operations on polynomials, including addition, subtraction, multiplication, and division. It also optimizes equations and provides a structured approach to polynomial operations using classes.
 
