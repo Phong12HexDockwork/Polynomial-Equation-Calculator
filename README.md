@@ -2,8 +2,8 @@
 
 # Polynomial Arithmetic
 [Phạm Thanh Phong](https://www.facebook.com/profile.php?id=100058046165384) @ University of Science - Vietnam National University
-```bash
-  
+
+
 
 <img alt="Static Badge" src="https://img.shields.io/badge/codeforces-gray?style=plastic&logo=codeforces&label=2424&labelColor=%23de0a26&link=https%3A%2F%2Fcodeforces.com%2Fprofile%2Fneraxis"> 
 <h3 align="left">Connect with me:</h3>
@@ -193,3 +193,8 @@ any non-zero coefficients have been encountered.
   - By printing terms in descending order of degree and handling sign placement appropriately, it provides a clear and readable representation of the polynomial.
 
 Overall, this function plays a crucial role in visualizing polynomials, aiding users in understanding and working with polynomial expressions effectively.
+
+## LISENCE 
+
+```bash
+© HCMUS - Physical and Engineering 
