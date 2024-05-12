@@ -30,4 +30,26 @@ The code consists of the following components:
 - None
 
 ## Sample Output
+========================Chuong trinh tinh toan 2 da thuc========================
++ Nhap Vao da thuc dau tien:  2x^3 + 3x^2 + 4x + 5
+
++ Nhap Vao da thuc thu hai :  -3x^2 + 2x - 1
+
+(Computer @ hostname) Dang tinh toan -
+
+(Computer @ hostname) Tinh toan hoan tat!
+
++ Phep nhan va chia:
+
+     - Nhan 2 da thuc:     0
+
+     - Chia 2 da thuc:     0
+
+     - Phan du 2 da thuc:  0
+
++ Phep cong va tru:
+
+     - Cong 2 da thuc la:  2x^3 + 4x + 4
+     - Tru 2 da thuc la :  2x^3 + 6x^2 + 2x + 6
+=====================================HET========================================
 
