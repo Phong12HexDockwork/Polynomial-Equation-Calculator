@@ -13,8 +13,8 @@ This C++ program performs arithmetic operations on polynomials, including additi
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your_username/polynomial-arithmetic.git
-   
+[   git clone https://github.com/your_username/polynomial-arithmetic.git
+](https://github.com/Phong12HexDockwork/Polynomial-Equation-Calculator/tree/main)   
 2. Compile the source code:
    ```bash
    g++ main.cpp -o polynomial
