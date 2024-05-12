@@ -4,6 +4,7 @@
 
 [Phạm Thanh Phong](https://www.facebook.com/profile.php?id=100058046165384) 
 <img alt="Static Badge" src="https://img.shields.io/badge/codeforces-gray?style=plastic&logo=codeforces&label=2424&labelColor=%23de0a26&link=https%3A%2F%2Fcodeforces.com%2Fprofile%2Fneraxis"> 
+<img alt="Static Badge" src="https://img.shields.io/badge/Neraxis_1210-red?style=social&logo=github&label=github">
 
 [Nguyễn Ngô Thùy Trinh](https://www.facebook.com/profile.php?id=100086016403901)
 
