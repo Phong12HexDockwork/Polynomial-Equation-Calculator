@@ -23,6 +23,8 @@ This C++ program performs arithmetic operations on polynomials, including additi
    ```bash
    ./polynomial
    
+## Example 
+
 ```bash
    $ ./polynomial
    
