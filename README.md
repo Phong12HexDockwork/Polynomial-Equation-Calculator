@@ -11,58 +11,37 @@ This C++ program performs arithmetic operations on polynomials, including additi
 
 # Explanation 
 
-## Polynomial Division Class Explanation
+# Polynomial Equation Processing Code Explanation
 
-The `Polynomial` class in C++ represents a polynomial expression and provides functionalities for creating, manipulating, and performing arithmetic operations on polynomial objects.
+The provided code contains functions for processing, optimizing, and performing operations on polynomial equations. Let's break down each function:
 
-## Constructors
+## `process_string`
 
-The class has multiple constructors:
+This function processes a string representing a polynomial equation. It mainly handles removing unnecessary spaces and ensuring proper formatting around negative signs.
 
-- `Polynomial(unsigned deg)`: Constructs a polynomial of degree `deg` with all coefficients initialized to zero.
-- `Polynomial(unsigned deg, initializer_list <double> cs)`: Constructs a polynomial of degree `deg` with coefficients specified in the initializer list `cs`.
-- `Polynomial(initializer_list <double> cs)`: Constructs a polynomial with coefficients specified in the initializer list `cs`.
-- `Polynomial(const vector<double>& cs)`: Constructs a polynomial with coefficients specified in the vector `cs`.
+## `add_one`
 
-## Member Functions
+This function adds a coefficient of 1 to variables in the polynomial equation that don't have a coefficient specified. It also ensures proper spacing and formatting.
 
-- `degree()`: Returns the degree of the polynomial.
-- `coefficients()`: Returns a reference to the vector containing the coefficients of the polynomial.
+## `identify_parentheses`
 
-## Arithmetic Operators
+This function identifies and optimizes parentheses in the equation. It extracts equations within parentheses, expands them if needed, and removes the parentheses. Additionally, it performs operations on the extracted equations and integrates them back into the main equation.
 
-The class overloads arithmetic operators to perform operations between polynomial objects:
+## `solution_equation`
 
-- `operator+`: Addition of polynomials.
-- `operator-`: Subtraction of polynomials.
-- `operator*`: Multiplication of polynomials.
-- `operator/`: Division of polynomials, returning a pair consisting of the quotient and remainder.
+This function splits the equation into individual components, such as coefficients and exponents, and stores them for further processing.
 
-## Other Functions
+## `split_coefficient_exponent`
 
-- `truncate()`: Removes leading zero coefficients from the polynomial.
+This function splits a coefficient and an exponent from a given equation string and saves them for later use.
 
-## Private Members
+## `multiplyTwoPolynomials`
 
-- `m_deg`: Represents the degree of the polynomial.
-- `m_coeffs`: Vector containing the coefficients of the polynomial.
+This function multiplies two polynomial equations represented as arrays of coefficients and returns the resulting polynomial.
 
-## Friend Function
+## `Polynomial` class
 
-- `operator<<`: Friend function to overload the output stream operator for printing polynomial objects.
+This class represents a polynomial equation and provides methods for addition, subtraction, multiplication, division, and truncation. It also overloads the output stream operator for printing polynomial objects.
 
-## Example Usage
+Overall, these functions and the `Polynomial` class offer a comprehensive toolkit for processing, optimizing, and performing operations on polynomial equations.
 
-```cpp
-Polynomial p1{2, {1, 2, 3}}; // Polynomial: 2x^2 + 3x + 1
-Polynomial p2{3, {4, 5, 6, 7}}; // Polynomial: 7x^3 + 6x^2 + 5x + 4
-
-Polynomial sum = p1 + p2; // Addition
-Polynomial difference = p1 - p2; // Subtraction
-Polynomial product = p1 * p2; // Multiplication
-auto division = p1 / p2; // Division, returns a pair (quotient, remainder)
-
-cout << "Sum: " << sum << endl;
-cout << "Difference: " << difference << endl;
-cout << "Product: " << product << endl;
-cout << "Quotient: " << division.first << ", Remainder: " << division.second << endl;
