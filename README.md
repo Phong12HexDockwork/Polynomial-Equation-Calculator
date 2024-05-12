@@ -1,55 +1,16 @@
-# Polynomial Equation Calculator
+# Polynomial Arithmetic in C++
 
-## Overview
+This C++ program performs arithmetic operations on polynomials, including addition, subtraction, multiplication, and division. It also optimizes equations and provides a structured approach to polynomial operations using classes.
 
-This C++ program calculates operations on polynomial equations, including addition, subtraction, multiplication, and division. It supports equations in the form of `ax^n + bx^(n-1) + ... + cx + d`, where `a`, `b`, `c`, `d` are coefficients and `n` is the exponent.
+## Features
 
-## Code Structure
+- **Arithmetic Operations**: Perform addition, subtraction, multiplication, and division on polynomials.
+- **Optimization**: Handles redundant parentheses and formats equations for better readability.
+- **Loading Animation**: Displays a loading animation during calculations.
+- **Platform Compatibility**: Clears the console based on the operating system for a better user experience.
 
-The code consists of the following components:
+## Installation
 
-- **Main Function**: Contains the main logic of the program, including input, processing, and output.
-- **Polynomial Class**: Defines a class to represent polynomial equations and implements arithmetic operations on polynomials.
-- **Utility Functions**: Contains utility functions for processing equations, such as splitting coefficients and exponents.
-
-## Code Explanation
-
-- **Polynomial Class**: The `Polynomial` class represents a polynomial equation. It overloads operators for addition, subtraction, multiplication, and division of polynomials.
-- **Utility Functions**: These functions preprocess the input equations, identify coefficients and exponents, and perform necessary calculations.
-
-## Usage
-
-1. Compile the program using a C++ compiler.
-2. Run the compiled executable.
-3. Enter the first polynomial equation when prompted.
-4. Enter the second polynomial equation when prompted.
-5. The program will perform various operations on the equations and display the results.
-
-## Dependencies
-
-- None
-
-## Sample Output
-========================Chuong trinh tinh toan 2 da thuc========================
-+ Nhap Vao da thuc dau tien:  2x^3 + 3x^2 + 4x + 5
-
-+ Nhap Vao da thuc thu hai :  -3x^2 + 2x - 1
-
-(Computer @ hostname) Dang tinh toan -
-
-(Computer @ hostname) Tinh toan hoan tat!
-
-+ Phep nhan va chia:
-
-     - Nhan 2 da thuc:     0
-
-     - Chia 2 da thuc:     0
-
-     - Phan du 2 da thuc:  0
-
-+ Phep cong va tru:
-
-     - Cong 2 da thuc la:  2x^3 + 4x + 4
-     - Tru 2 da thuc la :  2x^3 + 6x^2 + 2x + 6
-=====================================HET========================================
-
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your_username/polynomial-arithmetic.git
