@@ -1,4 +1,5 @@
 
+
 # Polynomial Arithmetic
 [Phạm Thanh Phong](https://www.facebook.com/profile.php?id=100058046165384) @ University of Science - Vietnam National University
 
@@ -31,6 +32,8 @@ The `solution_equation` function parses a character array representing an equati
   - `base`, `exponent`: Integer variables to store the base and exponent of each term.
   - `str_number_equation`: An array of strings to store the components of the equation.
   - `pointer`, `number_equation`: Pointers used for parsing the equation.
+
+![1](https://github.com/Phong12HexDockwork/Polynomial-Equation-Calculator/assets/99865968/14627066-625a-485e-bf20-cb2ac2762c1b)
 
 - **Process**:
   1. The function initializes `index` to 0 and sets up variables for storing the base and exponent of each term.
