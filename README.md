@@ -204,7 +204,7 @@ any non-zero coefficients have been encountered.
 
 Overall, this function plays a crucial role in visualizing polynomials, aiding users in understanding and working with polynomial expressions effectively.
 
-## LISENCE 
+## LICENSE
 
 ```bash
 © HCMUS - Physical and Engineering
