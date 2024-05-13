@@ -1,6 +1,9 @@
 
 
-                                                                                            # Polynomial Arithmetic
+<div align="center">
+  # Polynomial Arithmetic
+</div>
+
 <p align="center">
   <img alt="Static Badge" src="https://img.shields.io/badge/Neraxis-FF0000?style=for-the-badge&logo=Codeforces&logoColor=white&label=Codeforces&labelColor=blue&link=https%3A%2F%2Fcodeforces.com%2Fprofile%2FNeraxis" />
   <img alt="Static Badge" src="https://img.shields.io/badge/Neraxis-white?style=for-the-badge&logo=Github&logoColor=white&label=Github&labelColor=Black&link=https%3A%2F%2Fcodeforces.com%2Fprofile%2FNeraxis"/ >
