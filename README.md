@@ -1,8 +1,9 @@
 
 
-<div align="center" style="font-size: larger; font-weight: bold;">
+<div align="center" style="font-size: 40px; font-weight: bold;">
   Polynomial Arithmetic
 </div>
+
 
 <p align="center">
   <img alt="Static Badge" src="https://img.shields.io/badge/Neraxis-FF0000?style=for-the-badge&logo=Codeforces&logoColor=white&label=Codeforces&labelColor=blue&link=https%3A%2F%2Fcodeforces.com%2Fprofile%2FNeraxis" />
