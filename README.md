@@ -1,8 +1,6 @@
 
 
-<div align="center" style="font-size: 40px; font-weight: bold;">
-  Polynomial Arithmetic
-</div>
+## <div align="center">Polynomial Arithmetic</div>
 
 
 <p align="center">
