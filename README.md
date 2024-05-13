@@ -1,7 +1,7 @@
 
 
-<div align="center">
-  # Polynomial Arithmetic
+<div align="center" style="font-size: larger; font-weight: bold;">
+  Polynomial Arithmetic
 </div>
 
 <p align="center">
