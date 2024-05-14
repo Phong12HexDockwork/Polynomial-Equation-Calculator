@@ -63,6 +63,7 @@ void    loadingAnimation                    () {
         }
 }
 /////////////////////////////////////////////////////////////////////////////////////////
+
 char    *process_string                     (char equation[]) {
 
         int size_string  =  strlen (equation);
@@ -384,9 +385,9 @@ std::ostream& operator<<(std::ostream& os, const Polynomial& p)
                 return (os << p.m_coeffs[0]);
         
         for (size_t i = 0; i < p.m_deg - 1; ++i)
-                if (p.m_coeffs[i]) os << p.m_coeffs[i] << "x^" << p.m_deg-i << " + ";
+                if (p.m_coeffs[i]) os << p.m_coeffs[i] << "x^" << p.m_deg-i << "+";
 
-        return (os << p.m_coeffs[p.m_deg-1] << "x + " << p.m_coeffs[p.m_deg]);
+        return (os << p.m_coeffs[p.m_deg-1] << "x+" << p.m_coeffs[p.m_deg]);
 }
 //Print the equation following vector defined 
 void    output_number                           (int saving_number[50]){
@@ -406,6 +407,7 @@ void    output_number                           (int saving_number[50]){
                         case 1: if ( saving_number  [index]  !=  0 ){
 
                                 ping_check  =       false; 
+                                if ( saving_number [index] == 1 || saving_number [index] == -1 ){cout   <<  "x" ;} else
                                 cout        <<      abs(saving_number[index])    
                                             <<      "x" ; }  
                                 break;
@@ -413,11 +415,11 @@ void    output_number                           (int saving_number[50]){
                         default:if ( saving_number  [index]   != 0 ){
 
                                 ping_check  =       false;
+                                if ( saving_number [index] == 1 || saving_number [index] == -1 ){cout   <<  "x^"  <<  index ;} else
                                 cout        <<      abs(saving_number[index])    
                                             <<      "x^" 
                                             <<      index ; } 
                                 break;
-
             }
             if ( saving_number [index-1]  > 0 && ping_check == false ) { cout << "+" ;   } else 
             if ( saving_number [index-1]  < 0                        ) { cout << "-" ;   }   
@@ -441,8 +443,13 @@ int     main                               () {
         cout <<   endl
              <<   "+ Nhap Vao da thuc thu hai :  ";
         cin.getline                   (second_equation,   size_equation);
+        
+        int length_poly_one     =  strlen (first_equation);
+        int length_poly_two     =  strlen (second_equation);
 
-
+        first_equation  [length_poly_one]  =  ' ';
+        second_equation [length_poly_two]  =  ' ';
+        
         char *temp_equation_one = first_equation,
              *temp_equation_two = second_equation;
 
@@ -484,13 +491,14 @@ int     main                               () {
         thread loadingThread(loadingAnimation);
         this_thread::sleep_for(chrono::seconds(2));
         stopLoading = true;loadingThread.join();
-        cout <<  "\r( Computer @ "
-             <<  hostname
-             <<  " ) Tinh toan hoan tat!          " << endl
-             <<  "================================================================================";
+
+        cout  <<  "\r( Computer @ "
+              <<  hostname
+              <<  " ) Tinh toan hoan tat!          " << endl
+              <<  "================================================================================";
         
         cout  <<   endl 
-             <<   "+ Phep nhan va chia:";
+              <<   "+ Phep nhan va chia:";
 
         int size_poly1 = sizeof (saving_base_exponent_poly1) / sizeof (saving_base_exponent_poly1[0]);
         int size_poly2 = sizeof (saving_base_exponent_poly2) / sizeof (saving_base_exponent_poly2[0]);
@@ -498,9 +506,9 @@ int     main                               () {
 
         int *prod = multiplyTwoPolynomials(saving_base_exponent_poly1, saving_base_exponent_poly2, size_poly1, size_poly2); 
 
-	cout <<   endl
-             <<   endl
-             <<   "     - Nhan 2 da thuc:     "; 
+	cout  <<   endl
+              <<   endl
+              <<   "     - Nhan 2 da thuc:     ";     
         output_number (prod);
         if (thread_check == true) {cout << "0";}
 
