@@ -5,11 +5,14 @@
 
 const char      *calculation              =         "+ ";
 
-char            first_equation                      [size_equation], 
+char            difficult_equation                  [2*size_equation],
+                first_equation                      [size_equation], 
                 second_equation                     [size_equation], 
                 hostname                            [MAX_LENGTH_CHAR];
 
-int             addition_saving_number              [array_size], 
+int             menu_choice              =           0,
+
+                addition_saving_number              [array_size], 
 
                 subtraction_saving_number           [array_size], 
                 subtraction_saving_number_part2     [array_size], 
@@ -63,6 +66,21 @@ void    loadingAnimation                    () {
         }
 }
 /////////////////////////////////////////////////////////////////////////////////////////
+void     string_split_ploy                   (char equation[]) {
+
+        int     length_equation  =  strlen (equation),
+                temp_position    =  0;
+
+        for ( int index  =  0 ; index < length_equation ; index++ ) { if ( equation [index]  ==  ')' && equation [index+1]  ==  '(' ) { temp_position = index ;}}
+
+        strncpy ( first_equation  , equation + 1  , temp_position - 1 );
+        strncpy ( second_equation , equation + temp_position + 3 , length_equation );
+
+        int     length_equation_poly2  =  strlen (second_equation);
+        second_equation [length_equation_poly2 - 1 ]  =  ' ';
+        
+        return;
+}
 
 char    *process_string                     (char equation[]) {
 
@@ -292,8 +310,7 @@ int     *multiplyTwoPolynomials(int poly1[], int poly2[], int size_poly1, int si
         return productPolynomial;
 }
 //Divide two equations 
-class Polynomial
-{
+class Polynomial{
 public:
         //Sign Vector with highest to lowest expo 
         Polynomial ( unsigned deg ) : m_deg (deg), m_coeffs (deg+1){}
@@ -435,21 +452,35 @@ int     main                               () {
         gethostname(hostname, sizeof(hostname));
         checking_system();
 
-        cout <<   "========================Chuong trinh tinh toan 2 da thuc========================"
-             <<   endl;
-        cout << "+ Nhap Vao da thuc dau tien:  ";
+        cout  <<   "========================Chuong trinh tinh toan 2 da thuc========================"
+              <<   endl;
+        cout  <<   "+ Nhap Vao lua chon: "
+              <<   endl 
+              <<   "     1. Nhap lan luot."
+              <<   endl
+              <<   "     2. Nhap theo cum co dau ngoac."
+              <<   endl 
+              <<   "Lua chon:" ;
+        cin   >>   menu_choice ;
+
+
+        if (menu_choice == 1) {goto menu_one;}
+        else {
+                cout  <<  "+ Nhap vao cum chua dau ngoac : "; cin  >>  difficult_equation;
+                string_split_ploy (difficult_equation); goto menu_two;
+        }
+
+        menu_one:
+
+        cin.ignore(); cout  <<  endl;
+        cout <<   "+ Nhap Vao da thuc dau tien:  ";
         cin.getline                   (first_equation,    size_equation);
 
         cout <<   endl
              <<   "+ Nhap Vao da thuc thu hai :  ";
         cin.getline                   (second_equation,   size_equation);
-        
-        int length_poly_one     =  strlen (first_equation);
-        int length_poly_two     =  strlen (second_equation);
 
-        first_equation  [length_poly_one]  =  ' ';
-        second_equation [length_poly_two]  =  ' ';
-        
+        menu_two:
         char *temp_equation_one = first_equation,
              *temp_equation_two = second_equation;
 
@@ -492,31 +523,33 @@ int     main                               () {
         this_thread::sleep_for(chrono::seconds(2));
         stopLoading = true;loadingThread.join();
 
-        cout  <<  "\r( Computer @ "
-              <<  hostname
-              <<  " ) Tinh toan hoan tat!          " << endl
-              <<  "================================================================================";
-        
-        cout  <<   endl 
-              <<   "+ Phep nhan va chia:";
+        cout <<  "\r( Computer @ "
+             <<  hostname
+             <<  " ) Tinh toan hoan tat!          " << endl
+             <<  "=============================================================================="
+             <<   endl; 
 
-        int size_poly1 = sizeof (saving_base_exponent_poly1) / sizeof (saving_base_exponent_poly1[0]);
-        int size_poly2 = sizeof (saving_base_exponent_poly2) / sizeof (saving_base_exponent_poly2[0]);
+
+        cout <<   "+ Phep nhan va chia:";
+
+        
+        int size_poly1  =  sizeof (saving_base_exponent_poly1) / sizeof (saving_base_exponent_poly1[0]);
+        int size_poly2  =  sizeof (saving_base_exponent_poly2) / sizeof (saving_base_exponent_poly2[0]);
 
 
         int *prod = multiplyTwoPolynomials(saving_base_exponent_poly1, saving_base_exponent_poly2, size_poly1, size_poly2); 
 
-	cout  <<   endl
-              <<   endl
-              <<   "     - Nhan 2 da thuc:     ";     
+        menu_multi:
+	cout <<   endl
+             <<   endl
+             <<   "     - Nhan 2 da thuc:     "; 
         output_number (prod);
         if (thread_check == true) {cout << "0";}
-
         
 //////////////////////////////////////////////////////////////////////////////////,,//////////////////////
-        vector<double> coeffs_p1 (saving_base_exponent_poly1, 
+        vector<double> coeffs_p2 (saving_base_exponent_poly1, 
                                   saving_base_exponent_poly1 + ++highest_exponent_poly1 );
-        vector<double> coeffs_p2 (saving_base_exponent_poly2, 
+        vector<double> coeffs_p1 (saving_base_exponent_poly2, 
                                   saving_base_exponent_poly2 + ++highest_exponent_poly2 );
 
         reverse(coeffs_p1.begin(), coeffs_p1.end());
@@ -529,6 +562,7 @@ int     main                               () {
         auto quotient   = div.first;
         auto remainder  = div.second;
 
+        
         cout  <<   endl 
               <<   "     - Chia 2 da thuc:     " 
               <<   quotient 
@@ -537,22 +571,22 @@ int     main                               () {
               <<   "     - Phan du 2 da thuc:  " 
               <<   remainder 
               <<   endl;
-        
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
         cout  <<   endl 
               <<   "+ Phep cong va tru:" 
               <<   endl ;
 
+        menu_add:
         cout  <<   endl 
               <<   "     - Cong 2 da thuc la:  ";  output_number (addition_saving_number);
-
+        
         cout  <<   endl 
               <<   "     - Tru 2 da thuc la :  " ; output_number (subtraction_saving_number_result);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-        cout  <<   "=====================================HET========================================";
+        cout  <<   "====================================HET=======================================";
 
-        } catch ( const exception& errors ) { cerr << "Chương trình bị lỗi: " << errors.what() << '\n'; }
+        } catch ( const exception& errors ) { cerr << "Chuong trinh loi : " << errors.what() << '\n'; }
         return 0;
 } 
-
