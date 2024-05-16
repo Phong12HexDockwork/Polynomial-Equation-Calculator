@@ -1,6 +1,6 @@
 
 
-## <div align="center">Polynomial Arithmetic</div>
+## <div align="center">Polynomial Arithmetic (Ver 1.0) </div>
 
 
 <p align="center">
